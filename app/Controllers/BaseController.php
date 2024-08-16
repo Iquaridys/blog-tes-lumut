@@ -35,7 +35,7 @@ abstract class BaseController extends Controller
      *
      * @var list<string>
      */
-    protected $helpers = [];
+    protected $helpers = ['url'];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -54,5 +54,15 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+    }
+
+    protected function isLoggedIn()
+    {
+        return session()->get('logged_in');
+    }
+
+    protected function isAdmin()
+    {
+        return session()->get('role') === 'Admin';
     }
 }
