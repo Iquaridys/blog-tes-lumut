@@ -8,6 +8,11 @@ class Post extends BaseController
 {
     public function index()
     {
+
+        if (!session()->get('logged_in')) {
+            return redirect()->to('/login');
+        }
+        
         $model = new PostModel();
         $data['posts'] = $model->findAll();
         return view('post/index', $data);

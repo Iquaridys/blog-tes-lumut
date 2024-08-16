@@ -8,6 +8,11 @@ class Account extends BaseController
 {
     public function index()
     {
+
+        if (!session()->get('logged_in')) {
+            return redirect()->to('/login');
+        }
+    
         if (session()->get('role') !== 'Admin') {
             return redirect()->to('/');
         }
