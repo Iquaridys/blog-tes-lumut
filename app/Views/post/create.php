@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Post</title>
-</head>
-<body>
+<?= $this->extend('layout') ?>
+<?= $this->section('title') ?>Create Post<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
     <h2>Create Post</h2>
     <form action="<?= site_url('post/store') ?>" method="post">
         <label for="title">Title</label>
@@ -15,5 +12,4 @@
         <br>
         <button type="submit">Save</button>
     </form>
-</body>
-</html>
+<?= $this->endSection() ?>

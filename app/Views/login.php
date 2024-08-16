@@ -2,8 +2,6 @@
 <?= $this->section('title') ?>Login<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
-
 <h1>Login</h1>
 <?php if (session()->getFlashdata('error')): ?>
     <div class="alert alert-danger" role="alert">
